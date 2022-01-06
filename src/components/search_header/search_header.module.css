@@ -5,11 +5,13 @@
   background: black;
   color: white;
 }
+
 .logo {
   display: flex;
   align-items: center;
   margin-right: 1em;
 }
+
 .input {
   flex-basis: 100%;
   font-size: 1.2rem;
@@ -17,10 +19,11 @@
 }
 
 .button {
-  background-color: darkgray;
+  background-color: darkgrey;
+  outline: 0;
 }
+
 .buttonImg {
   height: 100%;
   padding: 0.5em 0.2em;
-  outline: 0;
 }

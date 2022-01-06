@@ -1,17 +1,19 @@
-import React, { useRef } from "react";
 import styles from "./search_header.module.css";
-const Search_header = ({ onSearch }) => {
+import React, { memo, useRef } from "react";
+
+const SearchHeader = memo(({ onSearch }) => {
   const inputRef = useRef();
-  const hadndleSearch = () => {
+  const handleSearch = () => {
     const value = inputRef.current.value;
     onSearch(value);
   };
   const onClick = () => {
-    hadndleSearch();
+    handleSearch();
   };
-  const onKeypress = (event) => {
+
+  const onKeyPress = (event) => {
     if (event.key === "Enter") {
-      hadndleSearch();
+      handleSearch();
     }
   };
   return (
@@ -25,7 +27,7 @@ const Search_header = ({ onSearch }) => {
         className={styles.input}
         type="search"
         placeholder="Search..."
-        onKeyPress={onKeypress}
+        onKeyPress={onKeyPress}
       />
       <button className={styles.button} type="submit" onClick={onClick}>
         <img
@@ -36,7 +38,6 @@ const Search_header = ({ onSearch }) => {
       </button>
     </header>
   );
-};
-// const Search_header = (props) => <h1>Header!</h1>;
+});
 
-export default Search_header;
+export default SearchHeader;
